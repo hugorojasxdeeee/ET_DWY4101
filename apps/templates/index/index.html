@@ -1,0 +1,131 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	{% block extrastatic %}
+	{% endblock %}
+
+	
+	<link rel="stylesheet" href="<//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+  <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+  <link rel="stylesheet" href="{% static 'css/slider.css' %}">
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/icono.png' %}">
+	<title>{% block title%}Mis ascensores{% endblock %}</title>
+</head>
+<body>
+<div class="container">
+
+	{% block navbar %}
+    <div class="bs-docs-section clearfix">
+        <div class="row">
+            <div class="col-lg-18">
+                <div class="bs-component">
+                 <nav class="navbar navbar-default">
+                     <div class="container-fluid">
+                        <div class="navbar-header">
+                          <a class="navbar-brand" href="{% url 'inicio' %}#">Mis ascensores</a>
+                        </div>
+                       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                         <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Listados <span class="caret"></span></a>
+                              <ul class="dropdown-menu" role="menu">
+                               <li><a href="{% url 'order_lista' %}">Ordenes</a></li>
+                               <li><a href="{% url 'lista' %}">Cliente</a></li>
+                               <li><a href="{% url 'listar' %}">Tecnico</a></li>
+                              </ul>
+                            </li>
+                             <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Crear<span class="caret"></span></a>
+                              <ul class="dropdown-menu" role="menu">
+                                 <li><a href="{% url 'crear' %}">Orden</a></li>
+                                 <li><a href="{% url 'registro' %}">Cliente</a></li>
+                                 <li><a href="{% url 'registrar' %}">Tecnico</a></li>
+                              </ul>
+                             </li>
+                         </ul>
+                         <ul class="nav navbar-nav navbar-right">
+                             <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Opciones<span class="caret"></span></a>
+                              <ul class="dropdown-menu" role="menu">
+                                 <li><a href="{#}">Salir</a></li>
+                              </ul>
+                            </li>
+                         </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+              </div>
+          </div>
+      </div>
+    {% endblock %}
+<main>
+    <section id="banner">
+        <div class="slider">
+    <ul>
+      <img src="{% static 'img/imagen1.jpg' %}">
+      <img src="{% static 'img/imagen3.jpg' %}">
+    </ul>
+</div>
+
+      <div class="contenedor">
+          <h2>Elévate junto a nosotros </h2>
+      </div>
+    </section>
+            
+</main>
+
+<div class="social">
+    <ul>
+      <li><a href="https://www.facebook.com/" class="icon-facebook"></a></li>
+      <li><a href="http://www.twitter.com/" class="icon-twitter"></a></li>
+      <li><a href="http://www.google.com/" class="icon-google"></a></li>
+      <li><a href="http://www.pinterest.com/" class="icon-pinterest"></a></li>
+      <li><a href="http://www.instagram.com/" class="icon-instagram"></a></li>
+    </ul>
+  </div>
+
+<section id="main">
+                 <article class="col">
+                        <p id="titulo"> COMPROMISO </p>
+                        <p id="contenido">Ascensores calificados y aprobados completamente. Sello de seguridad. </p>
+                        <p id="contenidos">Revisiones y reparaciones al alcance.</p>
+                    <div class="imgres"> <img src="{% static 'img/imagen5.jpg' %}" width="300" height="150"> </div>
+                </article>
+
+                <aside class="col">
+                    <div class="imgcam"> <img src="{% static 'img/imagen4.jpg' %}" width="500" height="180"> </div>
+                        <p id="titulo"> SEGURIDAD </p>
+                        <p id="contenido">Confianza y seguridad es lo que afrecemos, años de experiencia </p>
+                        <p id="contenidos">en el servicio, protegiendo infraestructuras y a nuestros usuarios.</p>
+                    
+                </aside>
+</section>
+
+<footer class="row">
+    <div class="col-lg-18">
+        <div class="footer">
+            <h3>Desarrollo Web y Mobile</h3>
+        </div>
+    </div>
+</footer>
+    </div>
+
+
+   <script src="hhtps://code.jquery.com-1.10.2.min.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+   <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+   {% block extrajs %}
+    {% endblock %}
+
+</body>
+</html>
